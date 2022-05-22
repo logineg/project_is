@@ -1,0 +1,17 @@
+{% extends "project_is2/base.html" %}
+
+{% block content %}
+
+<p>Темы</p>
+
+<ul>
+    {% for topic in topics %}
+      <li>
+        <a href="{% url 'project_is2:topic' topic.id %}">{{ topic }}</a>
+      </li>
+    {% empty %}
+      <li>Темы не были добавлены</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}
